@@ -8,7 +8,7 @@ from odoo.exceptions import ValidationError
 
 class training(models.Model):
     _name = 'training.training'
-    _inherit = ['mail.thread', 'ir.needaction_mixin', ]
+    _inherit = 'mail.thread'
     _rec_name = 'course_name'
 
 
@@ -84,7 +84,7 @@ class training(models.Model):
 
 class CourseSchedule(models.Model):
     _name = 'course.schedule'
-    _inherit = ['mail.thread', 'ir.needaction_mixin', ]
+    _inherit = 'mail.thread'
     _rec_name = 'text'
 
 
@@ -154,7 +154,7 @@ class CourseSchedule(models.Model):
 
 class PartnerTrainer(models.Model):
     _name = 'partner.trainer'
-    _inherit = ['mail.thread', 'ir.needaction_mixin', ]
+    _inherit = 'mail.thread'
     _rec_name = 'partner_name'
 
     partner_name = fields.Many2one(comodel_name='res.partner', string='Trainer', domain=[('active', '=', True)])
@@ -174,7 +174,7 @@ class PartnerTrainer(models.Model):
 
 class CourseTraining(models.Model):
     _name = 'course.training'
-    _inherit = ['mail.thread', 'ir.needaction_mixin', ]
+    _inherit = 'mail.thread'
     _rec_name = 'course'
 
     course = fields.Char(string='Course Name',required='1')
@@ -210,9 +210,6 @@ class HREmployee(models.Model):
 
     cour_ids = fields.Selection(selection=[('new', 'New')])
 
+    
 
-
-
-
-
-
+    
